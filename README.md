@@ -1,6 +1,6 @@
 # OSSL_teamProject
 
-팀명
+옷팡
 ===
 mini project 주제
 ----------------
