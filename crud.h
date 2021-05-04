@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+
 typedef struct {
 char name[30]; // 제품명
 int price; // 가격
