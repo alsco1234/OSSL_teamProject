@@ -50,7 +50,7 @@ int updateClothes(Clothes *c){
 
     //linked?
 
-    printf("==> 추가됨\n"); 
+    printf("==> 수정됨\n"); 
     return 1;
 }
 
