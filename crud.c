@@ -55,5 +55,6 @@ int updateClothes(Clothes *c){
 }
 
 int deleteClothes(Clothes *c){
-
+    //링크 연결 다르게
+    //delete
 }
