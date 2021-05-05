@@ -24,11 +24,11 @@ int createClothes(Clothes *c){
 }
 
 void readClothes(Clothes *c){
-    printf("%-15s %3dg %4d\n",c->name,c->size,c->price);
+    printf("%-15s %3dg %4d\n",c->name,c->size,c->price); //어디까지 ?
 }
 
 void listClothes(Clothes *c, int count){
-
+    
 }
 
 int updateClothes(Clothes *c){
