@@ -28,7 +28,14 @@ void readClothes(Clothes *c){
 }
 
 void listClothes(Clothes *c, int count){
-    
+    printf("\nNo. Name          weight price\n");
+    printf("================================\n");
+    for(int i=0; i<count; i++){
+        if( p[i].weight == -1 || p[i].price == -1 ) continue;
+        printf("%2d.", i+1);
+        readProduct(&p[i]);
+    }
+    printf("\n");
 }
 
 int updateClothes(Clothes *c){
