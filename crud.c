@@ -12,6 +12,7 @@ int createClothes(Clothes *c){
     scanf("%c",&c->size);
 
     printf("리뷰개수? ");
+    scanf("%d",&c->review);
 
     printf("==> 추가됨\n"); 
     return 1;
