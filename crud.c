@@ -17,6 +17,8 @@ int createClothes(Clothes *c){
     printf("별점개수? ");
     scanf("%d",&c->num_stars);
 
+    //linked?
+
     printf("==> 추가됨\n"); 
     return 1;
 }
