@@ -61,10 +61,8 @@ int main() {
                 }
                 break;
             case CREATE:
-                printf("카테고리 (0:상의, 1:하의, 2:드레스)? ");
-                scanf("%d", &type);
                 tmp = createClothes();
-                switch (type) {
+                switch (category()) {
                     case 0:
                         top.add_to_tail(tmp);
                         break;
@@ -87,9 +85,9 @@ int main() {
                     printf("등록된 정보가 없습니다.\n");
                     break;
                 }
-                check = updateProduct(p, count);
+                //check = updateProduct(p, count);
                 if (check == 1) {
-                    printf("수정되었습니다.\n");
+                    printf("==> 수정됨\n"); 
                 }
                 break;
             case DELETE:
@@ -97,7 +95,7 @@ int main() {
                     printf("등록된 정보가 없습니다.\n");
                     break;
                 }
-                check = deleteProduct(p, count);
+                //check = deleteProduct(p, count);
                 if (check == 1) {
                     printf("삭제되었습니다.\n");
                     edited_count--;
