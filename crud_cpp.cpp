@@ -135,11 +135,12 @@ int Product::remove_product(string p_name) {
 
 Clothes createClothes() {
     Clothes c;
-    string tmp;
+    string tmp, remainder;
     int price, review, numStars;
     char size;
     printf("\n");
     printf("제품명? ");
+    getline(cin, remainder);
     getline(cin, tmp);
     c.set_name(tmp);
 
