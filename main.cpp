@@ -11,7 +11,7 @@
 int main() {
     Product top, bot, dress;
     Clothes tmp;
-    string CATEGORY[3] = {"상의","하의","드레스"};
+    string CATEGORY[3] = {"상의","하의","드레스"}, temp;
     int cmd, type, check=1, count=0, edited_count=0;
     do {
         cmd = menu();
@@ -79,17 +79,27 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                printf("==> 추가됨\n");
+                if (check==1) printf("==> 추가됨\n");
                 break;
             case UPDATE:
-                if (edited_count==0) {
-                    printf("등록된 정보가 없습니다.\n");
-                    break;
+                switch (category()) {
+                    case 0:
+                        readClothes(top.head);
+                        printf("수정하고 싶은 제품 이름? ");
+                        cin >> temp;
+                        check = updateClothes(top.get_product(temp));
+                        break;
+                    case 1:
+                        
+                        break;
+                    case 2:
+                        
+                        break;
+                    default:
+                        cout << "ERROR" << endl;
+                        check=0;
                 }
-                //check = updateProduct(p, count);
-                if (check == 1) {
-                    printf("==> 수정됨\n"); 
-                }
+                if (check==1) printf("==> 수정됨\n");
                 break;
             case DELETE:
                 if (edited_count==0) {
