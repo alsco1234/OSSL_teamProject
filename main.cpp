@@ -27,6 +27,7 @@ int main() {
                             printf("제품 정보입니다.\n");
                             readClothes(top.head);
                         }
+                        break;
                     case 1:
                         if (bot.list_empty()) {
                             printf("등록된 상품이 없습니다.\n");
@@ -36,6 +37,7 @@ int main() {
                             printf("제품 정보입니다.\n");
                             readClothes(bot.head);
                         }
+                        break;
                     case 2:
                         if (dress.list_empty()) {
                             printf("등록된 상품이 없습니다.\n");
@@ -45,6 +47,7 @@ int main() {
                             printf("제품 정보입니다.\n");
                             readClothes(dress.head);
                         }
+                        break;
                     case 3:
                         if (top.list_empty() || bot.list_empty() || dress.list_empty()) {
                             printf("등록된 상품이 없습니다.\n");
@@ -76,9 +79,7 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) {
-                    printf("==> 추가됨\n");
-                }
+                printf("==> 추가됨\n");
                 break;
             case UPDATE:
                 if (edited_count==0) {
