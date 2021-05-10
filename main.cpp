@@ -11,7 +11,7 @@
 int main() {
     Product top, bot, dress;
     Clothes tmp;
-    string CATEGORY[3] = {"ìƒì˜","í•˜ì˜","ë“œë ˆìŠ¤"}, temp;
+    string CATEGORY[3] = {"»óÀÇ","ÇÏÀÇ","µå·¹½º"}, temp;
     int cmd, type, check=1, count=0, edited_count=0;
     do {
         cmd = menu();
@@ -20,45 +20,45 @@ int main() {
                 switch (category()) {
                     case 0:
                         if (top.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         else {
-                            printf("ì œí’ˆ ì •ë³´ì…ë‹ˆë‹¤.\n");
+                            printf("Á¦Ç° Á¤º¸ÀÔ´Ï´Ù.\n");
                             readClothes(top.head);
                         }
                         break;
                     case 1:
                         if (bot.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         else {
-                            printf("ì œí’ˆ ì •ë³´ì…ë‹ˆë‹¤.\n");
+                            printf("Á¦Ç° Á¤º¸ÀÔ´Ï´Ù.\n");
                             readClothes(bot.head);
                         }
                         break;
                     case 2:
                         if (dress.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         else {
-                            printf("ì œí’ˆ ì •ë³´ì…ë‹ˆë‹¤.\n");
+                            printf("Á¦Ç° Á¤º¸ÀÔ´Ï´Ù.\n");
                             readClothes(dress.head);
                         }
                         break;
                     case 3:
                         if (top.list_empty() || bot.list_empty() || dress.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         else {
-                            printf("ìƒì˜>\n");
+                            printf("»óÀÇ>\n");
                             readClothes(top.head);
-                            printf("\ní•˜ì˜\n");
+                            printf("\nÇÏÀÇ\n");
                             readClothes(bot.head);
-                            printf("\në“œë ˆìŠ¤\n");
+                            printf("\nµå·¹½º\n");
                             readClothes(dress.head);
                         }
                 }
@@ -79,37 +79,37 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> ì¶”ê°€ë¨\n");
+                if (check==1) printf("==> Ãß°¡µÊ\n");
                 break;
             case UPDATE:
                 switch (category()) {
                     case 0:
                         if (top.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(top.head);
-                        printf("ìˆ˜ì •í•˜ê³  ì‹¶ì€ ì œí’ˆ ì´ë¦„? ");
+                        printf("¼öÁ¤ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         cin >> temp;
                         check = updateClothes(top.get_product(temp));
                         break;
                     case 1:
                         if (bot.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(bot.head);
-                        printf("ìˆ˜ì •í•˜ê³  ì‹¶ì€ ì œí’ˆ ì´ë¦„? ");
+                        printf("¼öÁ¤ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         cin >> temp;
                         check = updateClothes(bot.get_product(temp));
                         break;
                     case 2:
                         if (dress.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(dress.head);
-                        printf("ìˆ˜ì •í•˜ê³  ì‹¶ì€ ì œí’ˆ ì´ë¦„? ");
+                        printf("¼öÁ¤ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         cin >> temp;
                         check = updateClothes(dress.get_product(temp));
                         break;
@@ -117,37 +117,37 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> ìˆ˜ì •ë¨\n");
+                if (check==1) printf("==> ¼öÁ¤µÊ\n");
                 break;
             case DELETE:
                 switch (category()) {
                     case 0:
                         if (top.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(top.head);
-                        printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ì œí’ˆ ì´ë¦„? ");
+                        printf("»èÁ¦ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         cin >> temp;
                         check = top.remove_product(temp);
                         break;
                     case 1:
                         if (bot.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(bot.head);
-                        printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ì œí’ˆ ì´ë¦„? ");
+                        printf("»èÁ¦ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         cin >> temp;
                         check = bot.remove_product(temp);
                         break;
                     case 2:
                         if (dress.list_empty()) {
-                            printf("ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(dress.head);
-                        printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ì œí’ˆ ì´ë¦„? ");
+                        printf("»èÁ¦ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         cin >> temp;
                         check = dress.remove_product(temp);
                         break;
@@ -155,12 +155,12 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> ì‚­ì œë¨\n");
+                if (check==1) printf("==> »èÁ¦µÊ\n");
                 break;
             default:
                 break;
         }
     } while(cmd != QUIT);
-    printf("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+    printf("Á¾·áµÇ¾ú½À´Ï´Ù.\n");
     return 0;
 }

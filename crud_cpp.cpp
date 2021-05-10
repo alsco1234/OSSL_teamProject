@@ -139,23 +139,23 @@ Clothes createClothes() {
     int price, review, numStars;
     char size;
     printf("\n");
-    printf("ì œí’ˆëª…? ");
+    printf("Á¦Ç°¸í? ");
     cin >> tmp;
     c.set_name(tmp);
 
-    printf("ê°€ê²©? ");
+    printf("°¡°İ? ");
     scanf("%d",&price);
     c.set_price(price);
 
-    printf("ì‚¬ì´ì¦ˆ (S, M, L, F(Free)? ");
+    printf("»çÀÌÁî (S, M, L, F(Free)? ");
     cin >> tmp;
     c.set_size(tmp);
 
-    printf("ë¦¬ë·°ê°œìˆ˜? ");
+    printf("¸®ºä°³¼ö? ");
     scanf("%d",&review);
     c.set_review(review);
 
-    printf("ë³„ì ê°œìˆ˜? ");
+    printf("º°Á¡°³¼ö? ");
     scanf("%d",&numStars);
     c.set_numStars(numStars);
 
@@ -170,30 +170,30 @@ void readClothes(Clothes *c) {
         printf("  %4d\n", tmp->get_price());
         count++;
     }
-    printf("........(ì´ %dê°œ)\n", count);
+    printf("........(ÃÑ %d°³)\n", count);
 }
 
 int updateClothes(Clothes *c) {
     string tmp;
     int price, review, numStars;
     printf("\n");
-    printf("ì œí’ˆëª…? ");
+    printf("Á¦Ç°¸í? ");
     cin >> tmp;
     c->set_name(tmp);
 
-    printf("ê°€ê²©? ");
+    printf("°¡°İ? ");
     scanf("%d",&price);
     c->set_price(price);
 
-    printf("ì‚¬ì´ì¦ˆ (S, M, L, F(Free)? ");
+    printf("»çÀÌÁî (S, M, L, F(Free)? ");
     cin >> tmp;
     c->set_size(tmp);
 
-    printf("ë¦¬ë·°ê°œìˆ˜? ");
+    printf("¸®ºä°³¼ö? ");
     scanf("%d",&review);
     c->set_review(review);
 
-    printf("ë³„ì ê°œìˆ˜? ");
+    printf("º°Á¡°³¼ö? ");
     scanf("%d",&numStars);
     c->set_numStars(numStars);
     return 1;
@@ -201,14 +201,14 @@ int updateClothes(Clothes *c) {
 
 int menu() {
     int m;
-    printf("\n[1]ëª©ë¡ [2]ì¶”ê°€ [3]ìˆ˜ì • [4]ì‚­ì œ [0]ì¢…ë£Œ >> ");
+    printf("\n[1]¸ñ·Ï [2]Ãß°¡ [3]¼öÁ¤ [4]»èÁ¦ [0]Á¾·á >> ");
     scanf("%d", &m);
     return m;
 }
 
 int category() {
     int type;
-    printf("ì¹´í…Œê³ ë¦¬ (0:ìƒì˜, 1:í•˜ì˜, 2:ë“œë ˆìŠ¤, 3:ì „ì²´)? ");
+    printf("Ä«Å×°í¸® (0:»óÀÇ, 1:ÇÏÀÇ, 2:µå·¹½º, 3:ÀüÃ¼)? ");
     scanf("%d", &type);
     return type;
 }
