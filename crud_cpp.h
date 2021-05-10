@@ -37,7 +37,7 @@ public:
     Clothes delete_from_head();
     int num_nodes();
     bool list_empty();
-    Clothes get_product(string p_name);
+    Clothes* get_product(string p_name);
     int remove_product(string p_name);
 };
 
