@@ -175,10 +175,11 @@ void readClothes(Clothes *c) {
 }
 
 int updateClothes(Clothes *c) {
-    string tmp;
+    string tmp, remainder;
     int price, review, numStars;
     printf("\n");
     printf("제품명? ");
+    getline(cin, remainder);
     getline(cin, tmp);
     c->set_name(tmp);
 

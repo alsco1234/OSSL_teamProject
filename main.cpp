@@ -155,7 +155,7 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> ������\n");
+                if (check==1) printf("==> 삭제됨\n");
                 break;
             default:
                 break;
