@@ -118,6 +118,12 @@ int Product::remove_product(string p_name) {
     int result=0;
     for (c = head; c!=NULL; c = c->link) {
         if (c->get_name() == p_name) {
+            if (c->link == NULL) {
+                delete c;
+                head = tail = NULL;
+                result = 1;
+                break;
+            }
             c2->link = c->link;
             delete c;
             result = 1;
