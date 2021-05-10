@@ -1,6 +1,6 @@
 #include "crud_cpp.h"
 
-void Clothes::set_data(string n, int p, char s, int r, int ns) {
+void Clothes::set_data(string n, int p, string s, int r, int ns) {
     name = n;
     price = p;
     size = s;
@@ -16,7 +16,7 @@ void Clothes::set_price(int p) {
     price = p;
 }
 
-void Clothes::set_size(char s) {
+void Clothes::set_size(string s) {
     size = s;
 }
 
@@ -36,7 +36,7 @@ int Clothes::get_price() {
     return price;
 }
 
-char Clothes::get_size() {
+string Clothes::get_size() {
     return size;
 }
 
@@ -135,7 +135,7 @@ Clothes createClothes() {
     char size;
     printf("\n");
     printf("제품명? ");
-    scanf("%[^\n]s",tmp);
+    cin >> tmp;
     c.set_name(tmp);
 
     printf("가격? ");
@@ -143,8 +143,8 @@ Clothes createClothes() {
     c.set_price(price);
 
     printf("사이즈 (S, M, L, F(Free)? ");
-    scanf("%c",&size);
-    c.set_size(size);
+    cin >> tmp;
+    c.set_size(tmp);
 
     printf("리뷰개수? ");
     scanf("%d",&review);
@@ -160,11 +160,16 @@ Clothes createClothes() {
 void readClothes(Clothes *c) {
     Clothes *tmp;
     int count=0;
-    for (tmp = c; c!=NULL; c->link) {
-        printf("%-15s %3dg %4d\n",c->get_name(),c->get_size(),c->get_price());
+    for (tmp = c; tmp!=NULL; tmp->link) {
+        cout << tmp->get_name() << " " << tmp->get_size();
+        printf("  %4d\n", tmp->get_price());
         count++;
     }
     printf("........(총 %d개)", count);
+}
+
+int updateClothes(Clothes *c) {
+    return 1;
 }
 
 int menu() {
