@@ -102,16 +102,15 @@ bool Product::list_empty() {
     }
 }
 
-Clothes Product::get_product(string p_name) {
+Clothes* Product::get_product(string p_name) {
     Clothes *c;
     string name;
     double result;
     for (c = head; c!=NULL; c = c->link) {
         if (c->get_name() == p_name) {
-            break;
+            return c;
         }
     }
-    return *c;
 }
 
 int Product::remove_product(string p_name) {
@@ -169,6 +168,28 @@ void readClothes(Clothes *c) {
 }
 
 int updateClothes(Clothes *c) {
+    string tmp;
+    int price, review, numStars;
+    printf("\n");
+    printf("제품명? ");
+    cin >> tmp;
+    c->set_name(tmp);
+
+    printf("가격? ");
+    scanf("%d",&price);
+    c->set_price(price);
+
+    printf("사이즈 (S, M, L, F(Free)? ");
+    cin >> tmp;
+    c->set_size(tmp);
+
+    printf("리뷰개수? ");
+    scanf("%d",&review);
+    c->set_review(review);
+
+    printf("별점개수? ");
+    scanf("%d",&numStars);
+    c->set_numStars(numStars);
     return 1;
 }
 
