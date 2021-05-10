@@ -84,16 +84,34 @@ int main() {
             case UPDATE:
                 switch (category()) {
                     case 0:
+                        if (top.list_empty()) {
+                            printf("등록된 상품이 없습니다.\n");
+                            break;
+                        }
                         readClothes(top.head);
                         printf("수정하고 싶은 제품 이름? ");
                         cin >> temp;
                         check = updateClothes(top.get_product(temp));
                         break;
                     case 1:
-                        
+                        if (bot.list_empty()) {
+                            printf("등록된 상품이 없습니다.\n");
+                            break;
+                        }
+                        readClothes(bot.head);
+                        printf("수정하고 싶은 제품 이름? ");
+                        cin >> temp;
+                        check = updateClothes(bot.get_product(temp));
                         break;
                     case 2:
-                        
+                        if (dress.list_empty()) {
+                            printf("등록된 상품이 없습니다.\n");
+                            break;
+                        }
+                        readClothes(dress.head);
+                        printf("수정하고 싶은 제품 이름? ");
+                        cin >> temp;
+                        check = updateClothes(dress.get_product(temp));
                         break;
                     default:
                         cout << "ERROR" << endl;
@@ -102,18 +120,42 @@ int main() {
                 if (check==1) printf("==> 수정됨\n");
                 break;
             case DELETE:
-                if (edited_count==0) {
-                    printf("등록된 정보가 없습니다.\n");
-                    break;
+                switch (category()) {
+                    case 0:
+                        if (top.list_empty()) {
+                            printf("등록된 상품이 없습니다.\n");
+                            break;
+                        }
+                        readClothes(top.head);
+                        printf("삭제하고 싶은 제품 이름? ");
+                        cin >> temp;
+                        check = top.remove_product(temp);
+                        break;
+                    case 1:
+                        if (bot.list_empty()) {
+                            printf("등록된 상품이 없습니다.\n");
+                            break;
+                        }
+                        readClothes(bot.head);
+                        printf("삭제하고 싶은 제품 이름? ");
+                        cin >> temp;
+                        check = bot.remove_product(temp);
+                        break;
+                    case 2:
+                        if (dress.list_empty()) {
+                            printf("등록된 상품이 없습니다.\n");
+                            break;
+                        }
+                        readClothes(dress.head);
+                        printf("삭제하고 싶은 제품 이름? ");
+                        cin >> temp;
+                        check = dress.remove_product(temp);
+                        break;
+                    default:
+                        cout << "ERROR" << endl;
+                        check=0;
                 }
-                //check = deleteProduct(p, count);
-                if (check == 1) {
-                    printf("삭제되었습니다.\n");
-                    edited_count--;
-                }
-                else if (check == 0) {
-                    printf("취소되었습니다.\n");
-                }
+                if (check==1) printf("==> 삭제됨\n");
                 break;
             default:
                 break;
