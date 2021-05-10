@@ -18,7 +18,7 @@ mini project 주제
 ## 구성한 기능(함수)
 ---
 # __CRUD__
-## int createClothes(Clothes *c) 
+## Clothes createClothes()
  Create : 카테고리 맞는 새 구조체 생성
 
 ## void readClothes(Clothes *c)
