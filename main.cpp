@@ -11,7 +11,7 @@
 int main() {
     Product top, bot, dress;
     Clothes tmp;
-    string CATEGORY[3] = {"상의","하의","드레스"}, temp;
+    string CATEGORY[3] = {"상의","하의","드레스"}, temp, remainder;
     int cmd, type, check=1, count=0, edited_count=0;
     do {
         cmd = menu();
@@ -90,7 +90,8 @@ int main() {
                         }
                         readClothes(top.head);
                         printf("수정하고 싶은 제품 이름? ");
-                        cin >> temp;
+                        getline(cin, remainder);
+                        getline(cin, temp);
                         check = updateClothes(top.get_product(temp));
                         break;
                     case 1:
@@ -100,7 +101,8 @@ int main() {
                         }
                         readClothes(bot.head);
                         printf("수정하고 싶은 제품 이름? ");
-                        cin >> temp;
+                        getline(cin, remainder);
+                        getline(cin, temp);
                         check = updateClothes(bot.get_product(temp));
                         break;
                     case 2:
@@ -110,7 +112,8 @@ int main() {
                         }
                         readClothes(dress.head);
                         printf("수정하고 싶은 제품 이름? ");
-                        cin >> temp;
+                        getline(cin, remainder);
+                        getline(cin, temp);
                         check = updateClothes(dress.get_product(temp));
                         break;
                     default:
@@ -128,7 +131,8 @@ int main() {
                         }
                         readClothes(top.head);
                         printf("삭제하고 싶은 제품 이름? ");
-                        cin >> temp;
+                        getline(cin, remainder);
+                        getline(cin, temp);
                         check = top.remove_product(temp);
                         break;
                     case 1:
@@ -138,7 +142,8 @@ int main() {
                         }
                         readClothes(bot.head);
                         printf("삭제하고 싶은 제품 이름? ");
-                        cin >> temp;
+                        getline(cin, remainder);
+                        getline(cin, temp);
                         check = bot.remove_product(temp);
                         break;
                     case 2:
@@ -148,7 +153,8 @@ int main() {
                         }
                         readClothes(dress.head);
                         printf("삭제하고 싶은 제품 이름? ");
-                        cin >> temp;
+                        getline(cin, remainder);
+                        getline(cin, temp);
                         check = dress.remove_product(temp);
                         break;
                     default:

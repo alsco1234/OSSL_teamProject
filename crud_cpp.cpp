@@ -114,21 +114,23 @@ Clothes* Product::get_product(string p_name) {
 }
 
 int Product::remove_product(string p_name) {
-    Clothes *c, *c2;
+    Clothes *ahead, *before, *temp;
+    Clothes *c;
     int result=0;
-    for (c = head; c!=NULL; c = c->link) {
-        if (c->get_name() == p_name) {
-            if (c->link == NULL) {
-                delete c;
-                head = tail = NULL;
-                result = 1;
-                break;
-            }
-            c2->link = c->link;
-            delete c;
+    before = head;
+    if (head->get_name() == p_name) {
+        c = head;
+        head = head->link;
+        delete c;
+        result = 1;
+    }
+    
+    for (ahead = head->link; ahead!=NULL; ahead = ahead->link) {
+        if (ahead->get_name() == p_name) {
+            before->link = ahead->link;
+            delete ahead;
             result = 1;
         }
-        c2 = c;
     }
     return result;
 }
