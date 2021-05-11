@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "product.h"
+#include "class.h"
 
 using namespace std;
 
