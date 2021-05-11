@@ -1,8 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include <cstring>
 #include "product.h"
 
-void saveData(Clothes *c, int count); //데이터 저장
+void saveData(Clothes *c); //데이터 저장
 int loadData(Clothes *c); //데이터 읽어오기
 
 int searchName(Clothes *c, int count);
