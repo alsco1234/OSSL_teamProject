@@ -24,7 +24,6 @@ public:
     string get_size();
     int get_review();
     int get_numStars();
-    Clothes* get_link();
 };
 
 class Product {
@@ -32,8 +31,6 @@ public:
     Clothes *head, *tail;
     Product();
     void add_to_tail(Clothes c);
-    Clothes delete_from_head();
-    int num_nodes();
     bool list_empty();
     Clothes* get_product(string p_name);
     int remove_product(string p_name);
