@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "crud_cpp.h"
+#include "product.h"
 
 void saveData(Clothes *c, int count); //데이터 저장
 int loadData(Clothes *c); //데이터 읽어오기
