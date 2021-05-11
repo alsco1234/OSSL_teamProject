@@ -33,12 +33,12 @@ mini project 주제
 ## int updateClothes(Clothes *c) 
  Update : 대상 구조체 수정
 
-## int deleteClothes(Clothes *c) 
+## int deleteClothes(Product *p) 
  Delete : 대상 구조체 삭제
 
 ---
 # __DATA FILE__
-## void saveData(Clothes *c, int count);
+## void saveData(Clothes *c);
  데이터 저장
 
 ## int loadData(Clothes *c); 
