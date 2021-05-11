@@ -6,14 +6,12 @@ using namespace std;
 
 int menu();
 
+int category();
+
 Clothes createClothes();
 
 void readClothes(Clothes *c);
 
-void listClothes(Clothes *c, int count);
-
 int updateClothes(Clothes *c);
 
 int deleteClothes(Product *p);
-
-int category();
