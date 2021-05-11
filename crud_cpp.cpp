@@ -71,28 +71,6 @@ void Product::add_to_tail(Clothes c) {
     tail = tmp;
 }
 
-Clothes Product::delete_from_head() {
-    Clothes tmp;
-    Clothes *c;
-    c = head;
-    tmp = *head;
-    head = head->link;
-    delete c;
-    if (head == NULL) {
-        tail = NULL;
-    }
-    return tmp;
-}
-
-int Product::num_nodes() {
-    Clothes *c;
-    int count = 0;
-    for (c = head; c!= NULL; c = c->link) {
-        count++;
-    }
-    return count;
-}
-
 bool Product::list_empty() {
     if (head == NULL) {
         return true;
@@ -209,7 +187,7 @@ int updateClothes(Clothes *c) {
 
 int menu() {
     int m;
-    printf("\n[1]목록 [2]추가 [3]수정 [4]삭제 [0]종료 >> ");
+    printf("\n[1]목록 [2]추가 [3]수정 [4]삭제 [5]검색 [6]저장 [0]종료 >> ");
     scanf("%d", &m);
     return m;
 }
