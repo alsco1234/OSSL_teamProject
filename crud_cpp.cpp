@@ -118,7 +118,7 @@ int Product::remove_product(string p_name) {
     Clothes *c;
     int result=0;
     before = head;
-    if (head->get_name() == p_name) {
+    if (strstr(head->get_name().c_str(),p_name.c_str())) {
         c = head;
         head = head->link;
         delete c;
@@ -126,7 +126,7 @@ int Product::remove_product(string p_name) {
     }
     
     for (ahead = head->link; ahead!=NULL; ahead = ahead->link) {
-        if (ahead->get_name() == p_name) {
+        if (strstr(ahead->get_name().c_str(),p_name.c_str())) {
             before->link = ahead->link;
             delete ahead;
             result = 1;
