@@ -26,8 +26,6 @@ mini project 주제
  Create : 카테고리 맞는 새 구조체 생성
 
 ## void readClothes(Clothes *c)
-
-## void listClothes(Clothes *c, int count)
  Read : 카테고리 맞는 구조체들 읽어오기
 
 ## int updateClothes(Clothes *c) 
