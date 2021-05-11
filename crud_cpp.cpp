@@ -125,11 +125,13 @@ int Product::remove_product(string p_name) {
         result = 1;
     }
     
-    for (ahead = head->link; ahead!=NULL; ahead = ahead->link) {
-        if (strstr(ahead->get_name().c_str(),p_name.c_str())) {
-            before->link = ahead->link;
-            delete ahead;
-            result = 1;
+    else {
+        for (ahead = head->link; ahead!=NULL; ahead = ahead->link) {
+            if (strstr(ahead->get_name().c_str(),p_name.c_str())) {
+                before->link = ahead->link;
+                delete ahead;
+                result = 1;
+            }
         }
     }
     return result;
@@ -217,4 +219,13 @@ int category() {
     printf("카테고리 (0:상의, 1:하의, 2:드레스, 3:전체)? ");
     scanf("%d", &type);
     return type;
+}
+
+int deleteClothes(Product *p) {
+    string temp, remainder;
+    readClothes(p->head);
+    printf("삭제하고 싶은 제품 이름? ");
+    getline(cin, remainder);
+    getline(cin, temp);
+    return p->remove_product(temp);
 }

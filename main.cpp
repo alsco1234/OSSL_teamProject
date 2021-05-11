@@ -129,11 +129,12 @@ int main() {
                             printf("등록된 상품이 없습니다.\n");
                             break;
                         }
-                        readClothes(top.head);
-                        printf("삭제하고 싶은 제품 이름? ");
-                        getline(cin, remainder);
-                        getline(cin, temp);
-                        check = top.remove_product(temp);
+                        deleteClothes(&top);
+                        //readClothes(top.head);
+                        //printf("삭제하고 싶은 제품 이름? ");
+                        //getline(cin, remainder);
+                        //getline(cin, temp);
+                        //check = top.remove_product(temp);
                         break;
                     case 1:
                         if (bot.list_empty()) {
