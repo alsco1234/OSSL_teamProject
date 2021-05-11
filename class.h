@@ -24,6 +24,7 @@ public:
     string get_size();
     int get_review();
     int get_numStars();
+    Clothes* get_link();
 };
 
 class Product {
