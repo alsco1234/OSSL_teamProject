@@ -1,9 +1,9 @@
 #include "manager.h"
 #include "crud_cpp.h"
 
-void saveData(Clothes *c, int count); //데이터 저장
+void saveData(Clothes *c); //데이터 저장
 int loadData(Clothes *c) {
-    
+
 }
 
 
