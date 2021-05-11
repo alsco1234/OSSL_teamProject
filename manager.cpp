@@ -1,7 +1,10 @@
 #include "manager.h"
+#include "crud_cpp.h"
 
 void saveData(Clothes *c, int count); //데이터 저장
-int loadData(Clothes *c); //데이터 읽어오기
+int loadData(Clothes *c) {
+    
+}
 
 
 int searchName(Clothes *c, int count);
