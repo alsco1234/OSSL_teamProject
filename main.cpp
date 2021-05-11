@@ -54,11 +54,11 @@ int main() {
                             break;
                         }
                         else {
-                            printf("상의>\n");
+                            printf("\n상의>\n");
                             readClothes(top.head);
-                            printf("\n하의\n");
+                            printf("\n\n하의>\n");
                             readClothes(bot.head);
-                            printf("\n드레스\n");
+                            printf("\n\n드레스>\n");
                             readClothes(dress.head);
                         }
                 }
