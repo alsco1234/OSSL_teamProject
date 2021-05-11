@@ -14,6 +14,6 @@ void listClothes(Clothes *c, int count);
 
 int updateClothes(Clothes *c);
 
-int deleteClothes(Clothes *c);
+int deleteClothes(Product *p);
 
 int category();
