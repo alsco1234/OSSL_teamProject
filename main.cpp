@@ -151,6 +151,10 @@ int main() {
                 }
                 if (check==1) printf("==> 삭제됨\n");
                 break;
+            case SEARCH:
+                break;
+            case SAVE:
+                break;
             default:
                 break;
         }
