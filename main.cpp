@@ -130,33 +130,20 @@ int main() {
                             break;
                         }
                         deleteClothes(&top);
-                        //readClothes(top.head);
-                        //printf("삭제하고 싶은 제품 이름? ");
-                        //getline(cin, remainder);
-                        //getline(cin, temp);
-                        //check = top.remove_product(temp);
                         break;
                     case 1:
                         if (bot.list_empty()) {
                             printf("등록된 상품이 없습니다.\n");
                             break;
                         }
-                        readClothes(bot.head);
-                        printf("삭제하고 싶은 제품 이름? ");
-                        getline(cin, remainder);
-                        getline(cin, temp);
-                        check = bot.remove_product(temp);
+                        deleteClothes(&bot);
                         break;
                     case 2:
                         if (dress.list_empty()) {
                             printf("등록된 상품이 없습니다.\n");
                             break;
                         }
-                        readClothes(dress.head);
-                        printf("삭제하고 싶은 제품 이름? ");
-                        getline(cin, remainder);
-                        getline(cin, temp);
-                        check = dress.remove_product(temp);
+                        deleteClothes(&dress);
                         break;
                     default:
                         cout << "ERROR" << endl;
