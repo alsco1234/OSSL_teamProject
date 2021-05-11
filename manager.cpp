@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "manager.h"
 
 void saveData(Clothes *c, int count); //데이터 저장
