@@ -12,7 +12,7 @@ int main() {
     Product top, bot, dress;
     Clothes tmp;
     string CATEGORY[3] = {"상의","하의","드레스"}, temp, remainder;
-    int cmd, type, check=1, count=0, edited_count=0;
+    int cmd, type, check=1, count=0;
     do {
         cmd = menu();
         switch (cmd) {
@@ -24,7 +24,7 @@ int main() {
                             break;
                         }
                         else {
-                            printf("제품 정보입니다.\n");
+                            cout << "\n" << CATEGORY[0] << " 제품 정보입니다." << endl;
                             readClothes(top.head);
                         }
                         break;
@@ -34,7 +34,7 @@ int main() {
                             break;
                         }
                         else {
-                            printf("제품 정보입니다.\n");
+                            cout << "\n" << CATEGORY[0] << " 제품 정보입니다." << endl;
                             readClothes(bot.head);
                         }
                         break;
@@ -44,7 +44,7 @@ int main() {
                             break;
                         }
                         else {
-                            printf("제품 정보입니다.\n");
+                            cout << "\n" << CATEGORY[0] << " 제품 정보입니다." << endl;
                             readClothes(dress.head);
                         }
                         break;
@@ -79,7 +79,7 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> Add\n");
+                if (check==1) printf("==> 추가됨\n");
                 break;
             case UPDATE:
                 switch (category()) {

@@ -168,12 +168,14 @@ Clothes createClothes() {
 void readClothes(Clothes *c) {
     Clothes *tmp;
     int count=0;
+    printf("제품명 / 사이즈 / 가격\n");
+    printf("......................\n");
     for (tmp = c; tmp!=NULL; tmp = tmp->link) {
-        cout << tmp->get_name() << " " << tmp->get_size();
-        printf("  %4d\n", tmp->get_price());
+        cout << tmp->get_name() << " / " << tmp->get_size();
+        printf(" / %5d\n", tmp->get_price());
         count++;
     }
-    printf("........(총 %d개)\n", count);
+    printf("......(총 %d개)........\n", count);
 }
 
 int updateClothes(Clothes *c) {
