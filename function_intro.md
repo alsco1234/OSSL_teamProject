@@ -5,19 +5,17 @@
  Create : 카테고리 맞는 새 구조체 생성
 
 ## void readClothes(Clothes *c)
-
-## void listClothes(Clothes *c, int count)
  Read : 카테고리 맞는 구조체들 읽어오기
 
 ## int updateClothes(Clothes *c) 
  Update : 대상 구조체 수정
 
-## int deleteClothes(Clothes *c) 
+## int deleteClothes(Product *p)
  Delete : 대상 구조체 삭제
 
 ---
 # __DATA FILE__
-## void saveData(Clothes *c, int count);
+## void saveData(Clothes *c);
  데이터 저장
 
 ## int loadData(Clothes *c); 
