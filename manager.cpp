@@ -3,6 +3,9 @@
 
 void saveData(Clothes *c); //데이터 저장
 int loadData(Clothes *c) {
+    ifstream inf("clothesInfo.txt");
+    string str;
+    getline(inf, str);
 
 }
 
