@@ -1,4 +1,4 @@
-#include "crud_cpp.h"
+#include "crud.h"
 
 void Clothes::set_data(string n, int p, string s, int r, int ns) {
     name = n;
@@ -121,24 +121,24 @@ Clothes createClothes() {
     int price, review, numStars;
     char size;
     printf("\n");
-    printf("ì œí’ˆëª…? ");
+    printf("Á¦Ç°¸í? ");
     getline(cin, remainder);
     getline(cin, tmp);
     c.set_name(tmp);
 
-    printf("ê°€ê²©? ");
+    printf("°¡°Ý? ");
     scanf("%d",&price);
     c.set_price(price);
 
-    printf("ì‚¬ì´ì¦ˆ (S, M, L, F(Free)? ");
+    printf("»çÀÌÁî (S, M, L, F(Free)? ");
     cin >> tmp;
     c.set_size(tmp);
 
-    printf("ë¦¬ë·°ê°œìˆ˜? ");
+    printf("¸®ºä°³¼ö? ");
     scanf("%d",&review);
     c.set_review(review);
 
-    printf("ë³„ì ê°œìˆ˜? ");
+    printf("º°Á¡°³¼ö? ");
     scanf("%d",&numStars);
     c.set_numStars(numStars);
 
@@ -148,38 +148,38 @@ Clothes createClothes() {
 void readClothes(Clothes *c) {
     Clothes *tmp;
     int count=0;
-    printf("ì œí’ˆëª… / ì‚¬ì´ì¦ˆ / ê°€ê²©\n");
+    printf("Á¦Ç°¸í / »çÀÌÁî / °¡°Ý\n");
     printf("......................\n");
     for (tmp = c; tmp!=NULL; tmp = tmp->link) {
         cout << tmp->get_name() << " / " << tmp->get_size();
         printf(" / %5d\n", tmp->get_price());
         count++;
     }
-    printf("......(ì´ %dê°œ)........\n", count);
+    printf("......(ÃÑ %d°³)........\n", count);
 }
 
 int updateClothes(Clothes *c) {
     string tmp, remainder;
     int price, review, numStars;
     printf("\n");
-    printf("ì œí’ˆëª…? ");
+    printf("Á¦Ç°¸í? ");
     getline(cin, remainder);
     getline(cin, tmp);
     c->set_name(tmp);
 
-    printf("ê°€ê²©? ");
+    printf("°¡°Ý? ");
     scanf("%d",&price);
     c->set_price(price);
 
-    printf("ì‚¬ì´ì¦ˆ (S, M, L, F(Free)? ");
+    printf("»çÀÌÁî (S, M, L, F(Free)? ");
     cin >> tmp;
     c->set_size(tmp);
 
-    printf("ë¦¬ë·°ê°œìˆ˜? ");
+    printf("¸®ºä°³¼ö? ");
     scanf("%d",&review);
     c->set_review(review);
 
-    printf("ë³„ì ê°œìˆ˜? ");
+    printf("º°Á¡°³¼ö? ");
     scanf("%d",&numStars);
     c->set_numStars(numStars);
     return 1;
@@ -187,14 +187,14 @@ int updateClothes(Clothes *c) {
 
 int menu() {
     int m;
-    printf("\n[1]ëª©ë¡ [2]ì¶”ê°€ [3]ìˆ˜ì • [4]ì‚­ì œ [5]ê²€ìƒ‰ [6]ì¡°íšŒ [7]ì €ìž¥ [0]ì¢…ë£Œ >> ");
+    printf("\n[1]¸ñ·Ï [2]Ãß°¡ [3]¼öÁ¤ [4]»èÁ¦ [5]°Ë»ö [6]Á¶È¸ [7]ÀúÀå [0]Á¾·á >> ");
     scanf("%d", &m);
     return m;
 }
 
 int category() {
     int type;
-    printf("ì¹´í…Œê³ ë¦¬ (0:ìƒì˜, 1:í•˜ì˜, 2:ë“œë ˆìŠ¤, 3:ì „ì²´)? ");
+    printf("Ä«Å×°í¸® (0:»óÀÇ, 1:ÇÏÀÇ, 2:µå·¹½º, 3:ÀüÃ¼)? ");
     scanf("%d", &type);
     return type;
 }
@@ -202,7 +202,7 @@ int category() {
 int deleteClothes(Product *p) {
     string temp, remainder;
     readClothes(p->head);
-    printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ì œí’ˆ ì´ë¦„? ");
+    printf("»èÁ¦ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
     getline(cin, remainder);
     getline(cin, temp);
     return p->remove_product(temp);
