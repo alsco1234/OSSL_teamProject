@@ -160,10 +160,10 @@ int main() {
                         check = loadData(&top, "topInfo.txt");
                         break;
                     case 1:
-                        bot.add_to_tail(tmp);
+                        check = loadData(&top, "botInfo.txt");
                         break;
                     case 2:
-                        dress.add_to_tail(tmp);
+                        check = loadData(&top, "dressInfo.txt");
                         break;
                     default:
                         cout << "ERROR" << endl;
