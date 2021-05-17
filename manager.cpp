@@ -5,29 +5,25 @@ vector<string> split(string input, char delimiter) {
     vector<string> answer;
     stringstream ss(input);
     string temp;
- 
     while (getline(ss, temp, delimiter)) {
         answer.push_back(temp);
     }
-
     return answer;
 }
 
-void saveData(Clothes *c, string filename){ //데이터 저장
-ofstream fout;
-    Clothes *ahead;
-    fout.open(filename);
-    if(fout.is_open()){
-        for (ahead = c->link; ahead!=NULL; ahead = ahead->link){
-            fout << ahead->get_name() << "/" << ahead->get_price() << "/" << 
-                ahead->get_size() << "/" << ahead->get_review() << "/" << ahead->get_numStars() << endl;
-        }
+void saveData(Product *p, string filename) {
+    Clothes *tmp;
+    ofstream of;
+    of.open(filename);
+    for (tmp = p->head; tmp!=NULL; tmp = tmp->link) {
+        of << tmp->get_name() << "/" << tmp->get_price() << "/" << tmp->get_size() << endl;
     }
-    fout.close();
-}
+    of.close();
+} //데이터 저장
 
-int  loadData(Product *p, string filename) {
-    ifstream inf(filename);
+int loadData(Product *p, string filename) {
+    ifstream inf;
+    inf.open(filename);
     string str;
     int i, check=1;
     while (!inf.eof()) {
@@ -56,7 +52,8 @@ int  loadData(Product *p, string filename) {
         }
         p->add_to_tail(tmp);
     }
-        return check;
+    inf.close();
+    return check;
 }
 
 

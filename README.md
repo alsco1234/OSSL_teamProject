@@ -36,10 +36,10 @@ mini project 주제
 
 ---
 # __DATA FILE__
-## void saveData(Clothes *c, string filename);
+## void saveData(Product *p, string filename);
  데이터 저장
 
-## int loadData(Clothes *c, string filename); 
+## int loadData(Product *p, string filename); 
  데이터 읽어오기
 
 ---
