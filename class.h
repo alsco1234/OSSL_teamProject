@@ -7,13 +7,13 @@ using namespace std;
 
 class Clothes {
 private:
-    string name;        //ì œí’ˆëª…
-    int price;          //ê°€ê²©
-    string size;          //ì‚¬ì´ì¦ˆ(S,M,L,F(free))
-    int review;         //ë¦¬ë·° ê°œìˆ˜
-    int numStars;       //ë³„ì  ê°œìˆ˜
+    string name;        //Á¦Ç°¸í
+    int price;          //°¡°İ
+    string size;          //»çÀÌÁî(S,M,L,F(free))
+    int review;         //¸®ºä °³¼ö
+    int numStars;       //º°Á¡ °³¼ö
 public:
-    Clothes* link;      //ë‹¤ìŒ nodeë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
+    Clothes* link;      //´ÙÀ½ node¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ
     //setter
     void set_data(string n, int p, string s, int r, int ns);
     void set_name(string n);

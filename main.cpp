@@ -6,13 +6,13 @@
 #define UPDATE 3
 #define DELETE 4
 #define SEARCH 5
-#define LOAD 6  //???? ???
-#define SAVE 7  //???? ????
+#define LOAD 6  //ºÒ·¯¿À±â
+#define SAVE 7  //ÀúÀå
 
 int main() {
     Product top, bot, dress;
     Clothes tmp;
-    string CATEGORY[3] = {"ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½","ï¿½å·¹ï¿½ï¿½"}, temp, remainder;
+    string CATEGORY[3] = {"»óÀÇ","ÇÏÀÇ","µå·¹½º"}, temp, remainder;
     int cmd, type, check=1, count=0;
     do {
         cmd = menu();
@@ -21,45 +21,45 @@ int main() {
                 switch (category()) {
                     case 0:
                         if (top.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.");
                             break;
                         }
                         else {
-                            cout << "\n" << CATEGORY[0] << " ï¿½Ç° ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½." << endl;
+                            cout << "\n" << CATEGORY[0] << " Á¦Ç° Á¤º¸ÀÔ´Ï´Ù." << endl;
                             readClothes(top.head);
                         }
                         break;
                     case 1:
                         if (bot.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         else {
-                            cout << "\n" << CATEGORY[0] << " ï¿½Ç° ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½." << endl;
+                            cout << "\n" << CATEGORY[0] << " Á¦Ç° Á¤º¸ÀÔ´Ï´Ù." << endl;
                             readClothes(bot.head);
                         }
                         break;
                     case 2:
                         if (dress.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         else {
-                            cout << "\n" << CATEGORY[0] << " ï¿½Ç° ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½." << endl;
+                            cout << "\n" << CATEGORY[0] << " Á¦Ç° Á¤º¸ÀÔ´Ï´Ù." << endl;
                             readClothes(dress.head);
                         }
                         break;
                     case 3:
-                        if (top.list_empty() || bot.list_empty() || dress.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                        if (top.list_empty() && bot.list_empty() && dress.list_empty()) {
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         else {
-                            printf("\nï¿½ï¿½ï¿½ï¿½\n");
+                            printf("\n»óÀÇ\n");
                             readClothes(top.head);
-                            printf("\n\nï¿½ï¿½ï¿½ï¿½\n");
+                            printf("\n\nÇÏÀÇ\n");
                             readClothes(bot.head);
-                            printf("\n\nï¿½å·¹ï¿½ï¿½\n");
+                            printf("\n\nµå·¹½º\n");
                             readClothes(dress.head);
                         }
                 }
@@ -80,39 +80,39 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> ï¿½ß°ï¿½ï¿½ï¿½\n");
+                if (check==1) printf("==> Ãß°¡µÊ\n");
                 break;
             case UPDATE:
                 switch (category()) {
                     case 0:
                         if (top.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(top.head);
-                        printf("ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ ï¿½Ç° ï¿½Ì¸ï¿½? ");
+                        printf("¼öÁ¤ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         getline(cin, remainder);
                         getline(cin, temp);
                         check = updateClothes(top.get_product(temp));
                         break;
                     case 1:
                         if (bot.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(bot.head);
-                        printf("ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ ï¿½Ç° ï¿½Ì¸ï¿½? ");
+                        printf("¼öÁ¤ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         getline(cin, remainder);
                         getline(cin, temp);
                         check = updateClothes(bot.get_product(temp));
                         break;
                     case 2:
                         if (dress.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         readClothes(dress.head);
-                        printf("ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ ï¿½Ç° ï¿½Ì¸ï¿½? ");
+                        printf("¼öÁ¤ÇÏ°í ½ÍÀº Á¦Ç° ÀÌ¸§? ");
                         getline(cin, remainder);
                         getline(cin, temp);
                         check = updateClothes(dress.get_product(temp));
@@ -121,27 +121,27 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+                if (check==1) printf("==> ¼öÁ¤µÊ\n");
                 break;
             case DELETE:
                 switch (category()) {
                     case 0:
                         if (top.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         deleteClothes(&top);
                         break;
                     case 1:
                         if (bot.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         deleteClothes(&bot);
                         break;
                     case 2:
                         if (dress.list_empty()) {
-                            printf("ï¿½ï¿½Ïµï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.\n");
+                            printf("µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.\n");
                             break;
                         }
                         deleteClothes(&dress);
@@ -150,56 +150,59 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
-                if (check==1) printf("==> ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+                if (check==1) printf("==> »èÁ¦µÊ\n");
                 break;
             case SEARCH:
             int searchhow;
-                std :: cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï½Ã°Ú½ï¿½Ï±ï¿½?" << endl;
-                std :: cout << "ï¿½Ì¸ï¿½(1) /  ï¿½ï¿½ï¿½ï¿½(2) / ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(3) / ï¿½ï¿½ï¿½ï¿½ï¿½(4) / ï¿½ï¿½ï¿½(0)" << endl;
+                std :: cout << "¹«¾ùÀ¸·Î °Ë»öÇÏ½Ã°Ú½À´Ï±î?" << endl;
+                std :: cout << "ÀÌ¸§(1) /  °¡°Ý(2) / »çÀÌÁî(3) / º°Á¡¼ö(4) / Ãë¼Ò(0) >> ";
                 std :: cin >> searchhow;
-                if(searchhow==0) break;
+                if(searchhow==0){
+                    std :: cout << "==> Ãë¼ÒµÊ! ";
+                    break;
+                }
                 else if(searchhow==1){
                     string target;
-                    std :: cout << "\nï¿½î¶² ï¿½Ì¸ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½? ";
+                    std :: cout << "\n¾î¶² ÀÌ¸§À» Ã£À¸¼¼¿ä? ";
                     std :: cin >> target;
-                    std :: cout << "\ncategory 1. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 1. »óÀÇ¿¡¼­" << endl;
                     searchName(top.head, count, target);
-                    std :: cout << "\ncategory 2. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 2. ÇÏÀÇ¿¡¼­" << endl;
                     searchName(bot.head, count, target);
-                    std :: cout << "\ncategory 3. ï¿½å·¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 3. µå·¹½º¿¡¼­" << endl;
                     searchName(dress.head, count, target);
                 }
                 else if(searchhow==2){
                     int target;
-                    std :: cout << "\nï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½? ";
+                    std :: cout << "\n¾î¶² °¡°ÝÀ» Ã£À¸¼¼¿ä? ";
                     std :: cin >> target;
-                    std :: cout << "\ncategory 1. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 1. »óÀÇ¿¡¼­" << endl;
                     searchPrice(top.head, count, target);
-                    std :: cout << "\ncategory 2. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 2. ÇÏÀÇ¿¡¼­" << endl;
                     searchPrice(bot.head, count, target);
-                    std :: cout << "\ncategory 3. ï¿½å·¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 3. µå·¹½º¿¡¼­" << endl;
                     searchPrice(dress.head, count, target);
                 }
                 else if(searchhow==3){
                     string target;
-                    std :: cout << "\nï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½î¸¦ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½? ";
+                    std :: cout << "\n¾î¶² »çÀÌÁî¸¦ Ã£À¸¼¼¿ä? ";
                     std :: cin >> target;
-                    std :: cout << "\ncategory 1. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 1. »óÀÇ¿¡¼­" << endl;
                     searchSize(top.head, count, target);
-                    std :: cout << "\ncategory 2. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 2. ÇÏÀÇ¿¡¼­" << endl;
                     searchSize(bot.head, count, target);
-                    std :: cout << "\ncategory 3. ï¿½å·¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 3. µå·¹½º¿¡¼­" << endl;
                     searchSize(dress.head, count, target);
                 }
                 else if(searchhow==4){
                     int target;
-                    std :: cout << "\nï¿½î¶² ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½? ";
+                    std :: cout << "\n¾î¶² º°Á¡ ¼ö¸¦ Ã£À¸¼¼¿ä? ";
                     std :: cin >> target;
-                    std :: cout << "\ncategory 1. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 1. »óÀÇ¿¡¼­" << endl;
                     searchNum_stars(top.head, count, target);
-                    std :: cout << "\ncategory 2. ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 2. ÇÏÀÇ¿¡¼­" << endl;
                     searchNum_stars(bot.head, count, target);
-                    std :: cout << "\ncategory 3. ï¿½å·¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+                    std :: cout << "\ncategory 3. µå·¹½º¿¡¼­" << endl;
                     searchNum_stars(dress.head, count, target);
                 }
                 break;
@@ -216,10 +219,11 @@ int main() {
                         check = loadData(&dress, "dressInfo.txt");
                         break;
                     default:
-                        cout << "ERROR" << endl;
-                        check=0;
+                        check = loadData(&top, "topInfo.txt");
+                        check = loadData(&bot, "botInfo.txt");
+                        check = loadData(&dress, "dressInfo.txt");
                 }
-                if (check==1) printf("==> ï¿½Îµï¿½Ï·ï¿½\n");
+                if (check==1) printf("==> ºÒ·¯¿È!\n");
                 break;
             case SAVE:
                 switch (category()) {
@@ -233,15 +237,17 @@ int main() {
                         saveData(&dress, "dressInfo.txt");
                         break;
                     default:
-                        cout << "ERROR" << endl;
+                        saveData(&top, "topInfo.txt");
+                        saveData(&bot, "botInfo.txt");
+                        saveData(&dress, "dressInfo.txt");
                         check=0;
                 }
-                cout << "==> ì €ìž¥ì™„ë£Œ" << endl;
+                cout << "==> ÀúÀå¿Ï·á" << endl;
                 break;
             default:
                 break;
         }
     } while(cmd != QUIT);
-    printf("ï¿½ï¿½ï¿½ï¿½.\n");
+    printf("Á¾·áµÇ¾ú½À´Ï´Ù.\n");
     return 0;
 }

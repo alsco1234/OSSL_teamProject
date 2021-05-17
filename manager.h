@@ -1,16 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include <vector>
+#include <string>
 #include <sstream>
 #include <stdexcept>
 #include "class.h"
 
-vector<string> split(string str, char delimiter);
-
-
-void saveData(Product *p, string filename); //ë°ì´í„° ì €ì¥
-int loadData(Product *p, string filename); //ë°ì´í„° ì½ì–´ì˜¤ê¸°
+void saveData(Product *p, string filename); //µ¥ÀÌÅÍ ÀúÀå
+int loadData(Product *p, string filename); //µ¥ÀÌÅÍ ÀĞ¾î¿À±â
 
 void searchName(Clothes *c, int count, string filename);
 void searchPrice(Clothes *c, int count, int filename);

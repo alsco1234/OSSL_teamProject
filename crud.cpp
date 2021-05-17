@@ -148,11 +148,13 @@ Clothes createClothes() {
 void readClothes(Clothes *c) {
     Clothes *tmp;
     int count=0;
-    printf("제품명 / 사이즈 / 가격\n");
+    printf("제품명 / 사이즈 / 가격 / 리뷰개수 / 별점개수\n");
     printf("......................\n");
     for (tmp = c; tmp!=NULL; tmp = tmp->link) {
         cout << tmp->get_name() << " / " << tmp->get_size();
-        printf(" / %5d\n", tmp->get_price());
+        printf(" / %5d", tmp->get_price());
+        printf(" / %5d", tmp->get_review());
+        printf(" / %5d\n", tmp->get_numStars());
         count++;
     }
     printf("......(총 %d개)........\n", count);
@@ -187,7 +189,7 @@ int updateClothes(Clothes *c) {
 
 int menu() {
     int m;
-    printf("\n[1]목록 [2]추가 [3]수정 [4]삭제 [5]검색 [6]조회 [7]저장 [0]종료 >> ");
+    printf("\n[1]목록 [2]추가 [3]수정 [4]삭제 [5]검색 [6]불러오기 [7]저장 [0]종료 >> ");
     scanf("%d", &m);
     return m;
 }
