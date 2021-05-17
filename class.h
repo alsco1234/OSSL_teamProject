@@ -1,4 +1,6 @@
 #include <iostream>
+#ifndef CLASS
+#define CLASS
 
 using namespace std;
 
@@ -36,3 +38,5 @@ public:
     Clothes* get_product(string p_name);
     int remove_product(string p_name);
 };
+
+#endif
