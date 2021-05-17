@@ -1,6 +1,6 @@
 ## 구성한 기능(함수)
 ---
-# __CRUD__
+# __CRUD__ (담당자 : 나예원)
 ## int createClothes(Clothes *c) 
  Create : 카테고리 맞는 새 구조체 생성
 
@@ -14,15 +14,15 @@
  Delete : 대상 구조체 삭제
 
 ---
-# __DATA FILE__
-## void saveData(Clothes *c);
+# __DATA FILE__ (담당자 : 김민채)
+## void saveData(Clothes *c, string filename);
  데이터 저장
 
-## int loadData(Clothes *c); 
+## int loadData(Clothes *c, string filename); 
  데이터 읽어오기
 
 ---
-# __검색__
+# __검색__ (담당자 : 김민채)
 ## searchName(Clothes *c, int count)
  이름으로 검색
 
