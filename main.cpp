@@ -160,10 +160,10 @@ int main() {
                         check = loadData(&top, "topInfo.txt");
                         break;
                     case 1:
-                        check = loadData(&top, "botInfo.txt");
+                        check = loadData(&bot, "botInfo.txt");
                         break;
                     case 2:
-                        check = loadData(&top, "dressInfo.txt");
+                        check = loadData(&dress, "dressInfo.txt");
                         break;
                     default:
                         cout << "ERROR" << endl;
@@ -172,6 +172,21 @@ int main() {
                 if (check==1) printf("==> 로딩완료\n");
                 break;
             case SAVE:
+                switch (category()) {
+                    case 0:
+                        saveData(&top, "topInfo.txt");
+                        break;
+                    case 1:
+                        saveData(&bot, "botInfo.txt");
+                        break;
+                    case 2:
+                        saveData(&dress, "dressInfo.txt");
+                        break;
+                    default:
+                        cout << "ERROR" << endl;
+                        check=0;
+                }
+                cout << "==> 저장완료" << endl;
                 break;
             default:
                 break;

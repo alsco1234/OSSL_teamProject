@@ -14,11 +14,13 @@ vector<string> split(string input, char delimiter) {
 }
 
 void saveData(Product *p, string filename) {
+    Clothes *tmp;
     ofstream of;
     of.open(filename);
-    
-
-
+    for (tmp = p->head; tmp!=NULL; tmp = tmp->link) {
+        of << tmp->get_name() << "/" << tmp->get_price() << "/" << tmp->get_size() << endl;
+    }
+    of.close();
 } //데이터 저장
 
 int loadData(Product *p, string filename) {
