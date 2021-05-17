@@ -13,10 +13,17 @@ vector<string> split(string input, char delimiter) {
     return answer;
 }
 
-void saveData(Clothes *c); //데이터 저장
+void saveData(Product *p, string filename) {
+    ofstream of;
+    of.open(filename);
+    
+
+
+} //데이터 저장
 
 int loadData(Product *p, string filename) {
-    ifstream inf(filename);
+    ifstream inf;
+    inf.open(filename);
     string str;
     int i, check=1;
     while (!inf.eof()) {
@@ -45,7 +52,8 @@ int loadData(Product *p, string filename) {
         }
         p->add_to_tail(tmp);
     }
-        return check;
+    inf.close();
+    return check;
 }
 
 

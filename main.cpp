@@ -171,6 +171,8 @@ int main() {
                 }
                 if (check==1) printf("==> 로딩완료\n");
                 break;
+            case SAVE:
+                break;
             default:
                 break;
         }
