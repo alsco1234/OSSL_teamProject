@@ -1,12 +1,30 @@
 #include "manager.h"
 #include "crud_cpp.h"
 
-void saveData(Clothes *c); //데이터 저장
-int loadData(Clothes *c) {
-    ifstream inf("clothesInfo.txt");
-    string str;
-    getline(inf, str);
+vector<string> split(string input, char delimiter) {
+    vector<string> answer;
+    stringstream ss(input);
+    string temp;
+ 
+    while (getline(ss, temp, delimiter)) {
+        answer.push_back(temp);
+    }
+ 
+    return answer;
+}
 
+void saveData(Clothes *c); //데이터 저장
+
+int loadData(Clothes *c, string filename) {
+    ifstream inf(filename);
+    string str;
+    while (!inf.eof()) {
+        getline(inf, str);
+        vector<string> result = split(str, '/');
+        for (int i=0;i<result.size();i++){
+            cout << result[i] << endl;
+        }
+    }
 }
 
 
