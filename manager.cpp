@@ -15,25 +15,37 @@ vector<string> split(string input, char delimiter) {
 
 void saveData(Clothes *c); //데이터 저장
 
-int loadData(Clothes *c, string filename) {
-    Clothes tmp;
+int loadData(Product *p, string filename) {
     ifstream inf(filename);
     string str;
-    int i;
+    int i, check=1;
     while (!inf.eof()) {
+        Clothes tmp;
         getline(inf, str);
         vector<string> result = split(str, '/');
-        for (int i=0;i<result.size();i++) try {
-            if (stoi(result[i])) {
-                tmp.set_price(stoi(result[i]));
+        for (int i=0;i<result.size();i++) {
+            try {
+                if (stoi(result[i])) {
+                    tmp.set_price(stoi(result[i]));
+                }
+            } catch (invalid_argument& e){
+                if (result[i].length()==1) {
+                    tmp.set_size(result[i]);
+                }
+                else if (result[i].length() > 1)
+                {
+                    tmp.set_name(result[i]);
+                }
+                else {
+                    cerr << e.what() << std::endl;
+                    check = 0;
+                    throw;
+                }
             }
-        } catch (invalid_argument& e){
-            cerr << e.what() << std::endl;
         }
-            tmp.set_name(result[i]);
-            cout << result[i] << endl;
-        }
+        p->add_to_tail(tmp);
     }
+        return check;
 }
 
 

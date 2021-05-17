@@ -6,8 +6,8 @@
 #define UPDATE 3
 #define DELETE 4
 #define SEARCH 5
-#define LOAD 6
-#define SAVE 7
+#define LOAD 6  //파일 조회
+#define SAVE 7  //파일 저장
 
 int main() {
     Product top, bot, dress;
@@ -157,7 +157,7 @@ int main() {
             case LOAD:
                 switch (category()) {
                     case 0:
-                        loadData()
+                        check = loadData(&top, "topInfo.txt");
                         break;
                     case 1:
                         bot.add_to_tail(tmp);
@@ -169,6 +169,7 @@ int main() {
                         cout << "ERROR" << endl;
                         check=0;
                 }
+                if (check==1) printf("==> 로딩완료\n");
                 break;
             default:
                 break;

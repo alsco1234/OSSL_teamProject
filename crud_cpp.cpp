@@ -187,7 +187,7 @@ int updateClothes(Clothes *c) {
 
 int menu() {
     int m;
-    printf("\n[1]목록 [2]추가 [3]수정 [4]삭제 [5]검색 [6]저장 [0]종료 >> ");
+    printf("\n[1]목록 [2]추가 [3]수정 [4]삭제 [5]검색 [6]조회 [7]저장 [0]종료 >> ");
     scanf("%d", &m);
     return m;
 }
