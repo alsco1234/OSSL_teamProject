@@ -85,7 +85,7 @@ Clothes* Product::get_product(string p_name) {
     string name;
     double result;
     for (c = head; c!=NULL; c = c->link) {
-        if (c->get_name() == p_name) {
+        if (strstr(c->get_name().c_str(), p_name.c_str())) {
             return c;
         }
     }
