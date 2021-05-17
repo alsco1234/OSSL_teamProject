@@ -1,7 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <vector>
+#include <sstream>
 #include "class.h"
+
+vector<string> split(string str, char delimiter);
 
 void saveData(Clothes *c); //데이터 저장
 int loadData(Clothes *c); //데이터 읽어오기
