@@ -1,12 +1,13 @@
-#include <iostream>
 #include "crud_cpp.h"
+#include "manager.h"
 #define QUIT 0
 #define READ 1
 #define CREATE 2
 #define UPDATE 3
 #define DELETE 4
 #define SEARCH 5
-#define SAVE 6
+#define LOAD 6
+#define SAVE 7
 
 int main() {
     Product top, bot, dress;
@@ -153,7 +154,21 @@ int main() {
                 break;
             case SEARCH:
                 break;
-            case SAVE:
+            case LOAD:
+                switch (category()) {
+                    case 0:
+                        loadData()
+                        break;
+                    case 1:
+                        bot.add_to_tail(tmp);
+                        break;
+                    case 2:
+                        dress.add_to_tail(tmp);
+                        break;
+                    default:
+                        cout << "ERROR" << endl;
+                        check=0;
+                }
                 break;
             default:
                 break;

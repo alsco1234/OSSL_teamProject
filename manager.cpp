@@ -16,12 +16,21 @@ vector<string> split(string input, char delimiter) {
 void saveData(Clothes *c); //데이터 저장
 
 int loadData(Clothes *c, string filename) {
+    Clothes tmp;
     ifstream inf(filename);
     string str;
+    int i;
     while (!inf.eof()) {
         getline(inf, str);
         vector<string> result = split(str, '/');
-        for (int i=0;i<result.size();i++){
+        for (int i=0;i<result.size();i++) try {
+            if (stoi(result[i])) {
+                tmp.set_price(stoi(result[i]));
+            }
+        } catch (invalid_argument& e){
+            cerr << e.what() << std::endl;
+        }
+            tmp.set_name(result[i]);
             cout << result[i] << endl;
         }
     }
