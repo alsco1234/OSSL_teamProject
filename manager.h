@@ -8,10 +8,10 @@
 
 vector<string> split(string str, char delimiter);
 
-void saveData(Clothes *c); //데이터 저장
+void saveData(Clothes *c, string filename); //데이터 저장
 int loadData(Product *p, string filename); //데이터 읽어오기
 
-int searchName(Clothes *c, int count);
-int searchPrice(Clothes *c, int count);
-int searchSize(Clothes *c, int count);
-int searchNum_stars(Clothes *c, int count);
+void searchName(Clothes *c, int count, string filename);
+void searchPrice(Clothes *c, int count, int filename);
+void searchSize(Clothes *c, int count, string filename);
+void searchNum_stars(Clothes *c, int count, int filename);

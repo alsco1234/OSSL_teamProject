@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string> //getline
 #ifndef CLASS
 #define CLASS
 

@@ -1,5 +1,5 @@
 #include "manager.h"
-#include "crud_cpp.h"
+#include "crud.h"
 
 vector<string> split(string input, char delimiter) {
     vector<string> answer;
@@ -9,13 +9,24 @@ vector<string> split(string input, char delimiter) {
     while (getline(ss, temp, delimiter)) {
         answer.push_back(temp);
     }
- 
+
     return answer;
 }
 
-void saveData(Clothes *c); //데이터 저장
+void saveData(Clothes *c, string filename){ //데이터 저장
+ofstream fout;
+    Clothes *ahead;
+    fout.open(filename);
+    if(fout.is_open()){
+        for (ahead = c->link; ahead!=NULL; ahead = ahead->link){
+            fout << ahead->get_name() << "/" << ahead->get_price() << "/" << 
+                ahead->get_size() << "/" << ahead->get_review() << "/" << ahead->get_numStars() << endl;
+        }
+    }
+    fout.close();
+}
 
-int loadData(Product *p, string filename) {
+int  loadData(Product *p, string filename) {
     ifstream inf(filename);
     string str;
     int i, check=1;
@@ -49,7 +60,54 @@ int loadData(Product *p, string filename) {
 }
 
 
-int searchName(Clothes *c, int count);
-int searchPrice(Clothes *c, int count);
-int searchSize(Clothes *c, int count);
-int searchNum_stars(Clothes *c, int count);
+void searchName(Clothes *c, int count, string target){
+    Clothes* curr = c;
+    char listname[80];
+    char targetname[80];
+    while(curr!=NULL){
+        strcpy(listname,curr->get_name().c_str());
+        strcpy(targetname,target.c_str());
+        if(strstr(listname,targetname)) {
+            cout << curr->get_name() << " / " << curr->get_size();
+            printf(" / %5d\n", curr->get_price());
+        }
+        else curr = curr->link;
+    }
+    if(curr==NULL) cout << "target is not found" << endl;
+}
+
+void searchPrice(Clothes *c, int count, int target){
+    Clothes* curr = c;
+    while(curr!=NULL){
+        if(curr->get_price() == target) {
+            cout << curr->get_name() << " / " << curr->get_size();
+            printf(" / %5d\n", curr->get_price());
+        }
+        else curr = curr->link;
+    }
+    if(curr==NULL) cout << "target is not found" << endl;
+}
+
+void searchSize(Clothes *c, int count, string target){
+    Clothes* curr = c;
+    while(curr!=NULL){
+        if(curr->get_size() == target) {
+            cout << curr->get_name() << " / " << curr->get_size();
+            printf(" / %5d\n", curr->get_price());
+        }
+        else curr = curr->link;
+    }
+    if(curr==NULL) cout << "target is not found" << endl;
+}
+
+void searchNum_stars(Clothes *c, int count, int target){
+    Clothes* curr = c;
+    while(curr!=NULL){
+        if(curr->get_numStars() == target) {
+            cout << curr->get_name() << " / " << curr->get_size();
+            printf(" / %5d\n", curr->get_price());
+        }
+        else curr = curr->link;
+    }
+    if(curr==NULL) cout << "target is not found" << endl;
+}
