@@ -213,17 +213,16 @@ int main() {
                         check = loadData(&top, "topInfo.txt");
                         break;
                     case 1:
-                        check = loadData(&bot, "botInfo.txt");
+                        bot.add_to_tail(tmp);
                         break;
                     case 2:
-                        check = loadData(&dress, "dressInfo.txt");
+                        dress.add_to_tail(tmp);
                         break;
                     default:
-                        check = loadData(&top, "topInfo.txt");
-                        check = loadData(&bot, "botInfo.txt");
-                        check = loadData(&dress, "dressInfo.txt");
+                        cout << "ERROR" << endl;
+                        check=0;
                 }
-                if (check==1) printf("==> 불러옴!\n");
+                if (check==1) printf("==> 로딩완료\n");
                 break;
             case SAVE:
                 switch (category()) {

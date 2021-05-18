@@ -1,10 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include <string>
+#include <vector>
 #include <sstream>
 #include <stdexcept>
 #include "class.h"
+
+vector<string> split(string str, char delimiter);
 
 void saveData(Product *p, string filename); //데이터 저장
 int loadData(Product *p, string filename); //데이터 읽어오기

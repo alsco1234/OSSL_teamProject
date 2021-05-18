@@ -1,6 +1,17 @@
 #include "manager.h"
 #include "crud.h"
 
+vector<string> split(string input, char delimiter) {
+    vector<string> answer;
+    stringstream ss(input);
+    string temp;
+ 
+    while (getline(ss, temp, delimiter)) {
+        answer.push_back(temp);
+    }
+    return answer;
+}
+
 void saveData(Product *p, string filename) {
     Clothes *tmp;
     ofstream of;
@@ -10,34 +21,39 @@ void saveData(Product *p, string filename) {
         << "/" << tmp->get_review() << "/" << tmp->get_numStars() << endl;
     }
     of.close();
-} //데이터 저장
+}
 
-int loadData(Product *p, string filename) {
-    ifstream inf;
-    inf.open(filename);
+int  loadData(Product *p, string filename) {
+    ifstream inf(filename);
     string str;
     int i, check=1;
     while (!inf.eof()) {
         Clothes tmp;
         getline(inf, str);
-        if(str=="\0")break;
-        char cutstr[80];    //구분할 문자열
-        strcpy(cutstr,str.c_str());
-        char *ptr = strtok(cutstr, "/"); //첫번째 strtok 사용.
-        tmp.set_name(ptr);
-        ptr = strtok(NULL, "/");
-        tmp.set_price(stoi(ptr));
-        ptr = strtok(NULL, "/");
-        tmp.set_size(ptr);
-        ptr = strtok(NULL, "/");
-        tmp.set_review(stoi(ptr));
-        ptr = strtok(NULL, "/");
-        tmp.set_numStars(stoi(ptr));
-        ptr = strtok(NULL, "/");
+        vector<string> result = split(str, '/');
+        for (int i=0;i<result.size();i++) {
+            try {
+                if (stoi(result[i])) {
+                    tmp.set_price(stoi(result[i]));
+                }
+            } catch (invalid_argument& e){
+                if (result[i].length()==1) {
+                    tmp.set_size(result[i]);
+                }
+                else if (result[i].length() > 1)
+                {
+                    tmp.set_name(result[i]);
+                }
+                else {
+                    cerr << e.what() << std::endl;
+                    check = 0;
+                    throw;
+                }
+            }
+        }
         p->add_to_tail(tmp);
     }
-    inf.close();
-    return check;
+        return check;
 }
 
 
